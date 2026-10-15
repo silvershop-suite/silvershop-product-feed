@@ -1,0 +1,20 @@
+en:
+  SilverShop\ProductFeed\Extension\ProductFeedProductExtension:
+    ExcludeFromFeed: 'Exclude this product from product feeds'
+    ExcludeFromFeedDesc: 'Leaves this product (and its variations) out of every shopping-channel feed.'
+  SilverShop\ProductFeed\Extension\ProductFeedSiteConfigExtension:
+    SelectionHeader: 'Which products to include'
+    IncludeCategories: 'Only these categories (leave empty for all)'
+    IncludeCategoriesDesc: 'When set, only products in these categories (and their sub-categories) are fed.'
+    ExcludeCategories: 'Exclude these categories'
+    MinPrice: 'Minimum price'
+    MinPriceDesc: 'Products selling below this price are left out. 0 includes all prices.'
+    TabTitle: 'Product feed'
+    NoChannels: 'No feed channels are enabled yet. Install a channel connector (e.g. silvershop/product-feed-google) and enable its key in the ChannelFeedRegistry.enabled_channels config.'
+    OutputDir: 'Feed files are written to %s.'
+    ChannelsHeader: 'Enabled channels'
+  SilverShop\ProductFeed\Extension\ProductFeedBrandSiteConfigExtension:
+    IncludeBrands: 'Only these brands (leave empty for all)'
+    ExcludeBrands: 'Exclude these brands'
+  SilverShop\ProductFeed\Job\GenerateProductFeedJob:
+    TITLE: 'Regenerate product feeds'

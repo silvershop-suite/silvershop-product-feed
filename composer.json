@@ -1,0 +1,63 @@
+{
+    "name": "silvershop/product-feed",
+    "description": "Channel-agnostic product-feed core for SilverShop (CMS 6): selects feed-eligible catalogue products, normalises each through silvershop/catalog-data, hands them to a pluggable channel serializer (the FeedFormat / ChannelFeed registry seam), writes a static feed file atomically and regenerates it on a schedule. A channel connector (e.g. silvershop/product-feed-google) plugs in without the core knowing any channel specifics.",
+    "type": "silverstripe-vendormodule",
+    "keywords": ["silverstripe", "silvershop", "ecommerce", "product-feed", "merchant", "feed", "google-shopping", "channel"],
+    "license": "BSD-3-Clause",
+    "authors": [
+        {
+            "name": "SilverShop Contributors",
+            "homepage": "https://github.com/silvershop/silvershop-product-feed/graphs/contributors"
+        }
+    ],
+    "require": {
+        "php": "^8.3",
+        "silverstripe/framework": "^6.0",
+        "silverstripe/cms": "^6.0",
+        "silvershop/core": "^6.2",
+        "silvershop/catalog-data": "dev-main",
+        "symbiote/silverstripe-queuedjobs": "^6"
+    },
+    "require-dev": {
+        "cambis/silverstan": "^2.1",
+        "silverstripe/recipe-testing": "^4",
+        "silverstripe/sqlite3": "^4",
+        "squizlabs/php_codesniffer": "^3.0"
+    },
+    "suggest": {
+        "silvershop/product-feed-google": "The Google Merchant channel connector (RSS 2.0 + g: namespace).",
+        "silvershop/brands": "Enables include/exclude feed selection by Brand.",
+        "silvershop/product-identity": "Adds GTIN/MPN, surfaced through catalog-data into the feed."
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "stan": "vendor/bin/phpstan analyse --configuration=phpstan.neon --memory-limit=-1",
+        "lint": "vendor/bin/phpcs",
+        "lint:fix": "vendor/bin/phpcbf"
+    },
+    "config": {
+        "allow-plugins": {
+            "composer/installers": true,
+            "silverstripe/recipe-plugin": true,
+            "silverstripe/vendor-plugin": true,
+            "php-http/discovery": true
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-main": "1.x-dev"
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "SilverShop\\ProductFeed\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "SilverShop\\ProductFeed\\Tests\\": "tests/php/"
+        }
+    },
+    "prefer-stable": true,
+    "minimum-stability": "dev"
+}

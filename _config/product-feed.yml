@@ -1,0 +1,34 @@
+---
+Name: silvershop-product-feed
+After:
+  - silvershop-extensions
+  - silvershop-catalog-data
+---
+SilverShop\Page\Product:
+  extensions:
+    - SilverShop\ProductFeed\Extension\ProductFeedProductExtension
+
+SilverStripe\SiteConfig\SiteConfig:
+  extensions:
+    - SilverShop\ProductFeed\Extension\ProductFeedSiteConfigExtension
+
+SilverShop\ProductFeed\Registry\ChannelFeedRegistry:
+  channels:
+    # A deliberately non-production diagnostic channel (JSON Lines dump of the normalised VO). Registered so it is
+    # discoverable/testable, but NOT enabled — a real channel ships in its own connector (e.g.
+    # silvershop/product-feed-google). A connector appends its own key here.
+    debug: 'SilverShop\ProductFeed\Format\Debug\DebugChannelFeed'
+  # enabled_channels is intentionally empty: a fresh install writes no feed until a channel is enabled.
+  enabled_channels: []
+---
+Name: silvershop-product-feed-brands
+Only:
+  moduleexists: 'silvershop/brands'
+After:
+  - silvershop-product-feed
+---
+# Brand include/exclude selection, wired only when silvershop/brands is installed (its many_many relations to the
+# Brand class live in the extension's PHP config and only resolve when this extension is applied).
+SilverStripe\SiteConfig\SiteConfig:
+  extensions:
+    - SilverShop\ProductFeed\Extension\ProductFeedBrandSiteConfigExtension

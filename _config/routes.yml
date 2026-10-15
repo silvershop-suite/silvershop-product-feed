@@ -1,0 +1,7 @@
+---
+Name: silvershop-product-feed-routes
+After: '#rootroutes'
+---
+SilverStripe\Control\Director:
+  rules:
+    'feed': 'SilverShop\ProductFeed\Control\ProductFeedController'

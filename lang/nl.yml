@@ -1,0 +1,20 @@
+nl:
+  SilverShop\ProductFeed\Extension\ProductFeedProductExtension:
+    ExcludeFromFeed: 'Dit product uitsluiten van productfeeds'
+    ExcludeFromFeedDesc: 'Laat dit product (en zijn varianten) weg uit de feed van elk verkoopkanaal.'
+  SilverShop\ProductFeed\Extension\ProductFeedSiteConfigExtension:
+    SelectionHeader: 'Welke producten opnemen'
+    IncludeCategories: 'Alleen deze categorieën (leeg laten voor alle)'
+    IncludeCategoriesDesc: 'Indien ingesteld worden alleen producten in deze categorieën (en hun subcategorieën) opgenomen.'
+    ExcludeCategories: 'Deze categorieën uitsluiten'
+    MinPrice: 'Minimumprijs'
+    MinPriceDesc: 'Producten die onder deze prijs verkopen worden weggelaten. 0 neemt alle prijzen op.'
+    TabTitle: 'Productfeed'
+    NoChannels: 'Er zijn nog geen feedkanalen ingeschakeld. Installeer een kanaalconnector (bijv. silvershop/product-feed-google) en schakel de sleutel in via de config ChannelFeedRegistry.enabled_channels.'
+    OutputDir: 'Feedbestanden worden geschreven naar %s.'
+    ChannelsHeader: 'Ingeschakelde kanalen'
+  SilverShop\ProductFeed\Extension\ProductFeedBrandSiteConfigExtension:
+    IncludeBrands: 'Alleen deze merken (leeg laten voor alle)'
+    ExcludeBrands: 'Deze merken uitsluiten'
+  SilverShop\ProductFeed\Job\GenerateProductFeedJob:
+    TITLE: 'Productfeeds opnieuw genereren'
