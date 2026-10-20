@@ -23,7 +23,7 @@ SilverShop\ProductFeed\Registry\ChannelFeedRegistry:
 ---
 Name: silvershop-product-feed-brands
 Only:
-  moduleexists: 'silvershop/brands'
+  moduleexists: 'silvershop-suite/brands'
 After:
   - silvershop-product-feed
 ---
