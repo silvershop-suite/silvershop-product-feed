@@ -1,10 +1,10 @@
 # SilverShop Product Feed
 
-[![CI](https://github.com/silvershop/silvershop-product-feed/actions/workflows/ci.yml/badge.svg)](https://github.com/silvershop/silvershop-product-feed/actions/workflows/ci.yml)
+[![CI](https://github.com/silvershop-suite/silvershop-product-feed/actions/workflows/ci.yml/badge.svg)](https://github.com/silvershop-suite/silvershop-product-feed/actions/workflows/ci.yml)
 
 The **channel-agnostic product-feed core** for [SilverShop](https://github.com/silvershop/silvershop) on
 Silverstripe CMS 6. It selects feed-eligible catalogue products, normalises each one through
-[`silvershop-suite/catalog-data`](https://github.com/silvershop/silvershop-catalog-data), hands them to a pluggable
+[`silvershop-suite/catalog-data`](https://github.com/silvershop-suite/silvershop-catalog-data), hands them to a pluggable
 channel serializer, writes a static feed file **atomically**, and regenerates it on a schedule.
 
 The core knows **no channel specifics**. A channel connector — e.g. `silvershop-suite/product-feed-google` (RSS 2.0 +
